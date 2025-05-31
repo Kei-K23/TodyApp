@@ -1,18 +1,19 @@
-import Button from "@/components/ui/button";
-import { useAuth } from "@/lib/auth-context";
-import { Link } from "expo-router";
+import FloatingButton from "@/components/ui/floating-button";
+import { COLORS, commonStyles } from "@/styles/styles";
+import { useRouter } from "expo-router";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const TasksScreen = () => {
-  const { user, signOut } = useAuth();
+  const router = useRouter();
 
   return (
-    <View
+    <SafeAreaView
       style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        ...commonStyles.container,
+        paddingVertical: 20,
+        backgroundColor: COLORS.background,
       }}
     >
       <Text
@@ -22,11 +23,12 @@ const TasksScreen = () => {
       >
         Hello World
       </Text>
-      <Text>Hello React Native</Text>
-      <Text>{user?.name}</Text>
-      <Link href={"/landing"}>Auth</Link>
-      <Button title="logout" onPress={signOut} />
-    </View>
+      <FloatingButton
+        onPress={() => {
+          router.push("/add-task");
+        }}
+      />
+    </SafeAreaView>
   );
 };
 

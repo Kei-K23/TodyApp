@@ -14,7 +14,7 @@ const LandingScreen = () => {
     <SafeAreaView
       style={{
         ...commonStyles.container,
-        paddingVertical: 50,
+        paddingVertical: 20,
         backgroundColor: COLORS.background,
       }}
     >
