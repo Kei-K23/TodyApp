@@ -36,7 +36,6 @@ const AuthScreen = () => {
 
     const errorMsg = await signIn({ email, password });
     if (errorMsg) {
-      console.log(errorMsg);
       return;
     }
     router.replace("/(tabs)/tasks");
@@ -49,7 +48,6 @@ const AuthScreen = () => {
 
     const errorMsg = await signUp({ email, password, username });
     if (errorMsg) {
-      console.log(errorMsg);
       return;
     }
     router.replace("/(tabs)/tasks");
