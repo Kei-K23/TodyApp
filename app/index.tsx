@@ -1,8 +1,9 @@
 import Button from "@/components/ui/button";
+import Separator from "@/components/ui/separator";
 import { COLORS, commonStyles } from "@/styles/styles";
 import { Image } from "expo-image";
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const LandingScreen = () => {
@@ -22,14 +23,42 @@ const LandingScreen = () => {
         style={styles.image}
         contentFit="contain"
       />
-      <Text style={{ ...commonStyles.titleText }}>
-        Your convenience in making a todo list
-      </Text>
-      <Text>
+      <View
+        style={{
+          paddingHorizontal: 20,
+        }}
+      >
+        <Text
+          style={{
+            ...commonStyles.headerText,
+            textAlign: "center",
+          }}
+        >
+          Your convenience in making a todo list
+        </Text>
+      </View>
+      <Text
+        style={{
+          ...commonStyles.smallSubtitleText,
+          textAlign: "center",
+          marginTop: 10,
+          marginBottom: 20,
+        }}
+      >
         Here&apos;s a mobile platform that helps you create task or to list so
         that it can help you in every job easier and faster.
       </Text>
-      <Button title="Click" />
+      <Button title="Continue with email" icon="mail" />
+      <View style={styles.separatorContainer}>
+        <Separator />
+        <Text style={{ marginHorizontal: 10 }}>or continue with</Text>
+        <Separator />
+      </View>
+      <Button
+        title="Continue with Google"
+        icon="logo-google"
+        variant="outline"
+      />
     </SafeAreaView>
   );
 };
@@ -38,6 +67,11 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: "100%",
+  },
+  separatorContainer: {
+    marginVertical: 20,
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 

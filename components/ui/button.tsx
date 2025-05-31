@@ -3,10 +3,13 @@ import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import {
   ActivityIndicator,
+  StyleProp,
   StyleSheet,
   Text,
+  TextStyle,
   TouchableOpacity,
   View,
+  ViewStyle,
 } from "react-native";
 
 const VARIANTS = {
@@ -42,8 +45,8 @@ interface ButtonProps {
   iconPosition?: "left" | "right";
   loading?: boolean;
   disabled?: boolean;
-  style?: any;
-  textStyle?: any;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
   iconSize?: number;
   iconColor?: string;
 }

@@ -50,6 +50,10 @@ const commonStyles = StyleSheet.create({
     fontSize: FONT_SIZES.large,
     color: COLORS.gray,
   },
+  smallSubtitleText: {
+    fontSize: FONT_SIZES.small,
+    color: COLORS.gray,
+  },
   todoText: {
     fontSize: FONT_SIZES.medium,
     color: COLORS.black,
