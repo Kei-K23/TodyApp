@@ -40,6 +40,7 @@ const AddTaskScreen = () => {
         {
           user_id: user.$id,
           title,
+          created_at: new Date().toISOString(),
         }
       );
 
