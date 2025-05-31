@@ -17,6 +17,7 @@ const FONT_SIZES = {
   large: 20,
   xlarge: 24,
   xxlarge: 26,
+  xxxlarge: 34,
 };
 
 const commonStyles = StyleSheet.create({

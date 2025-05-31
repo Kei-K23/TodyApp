@@ -77,7 +77,7 @@ const AuthScreen = () => {
             )}
           </View>
 
-          <View style={styles.buttonContainer}>
+          <View style={styles.footerButtonContainer}>
             <Button
               disabled={isLoading}
               title={authForm === "login" ? "Login" : "Register"}
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  buttonContainer: {
+  footerButtonContainer: {
     marginBottom: 10,
   },
   authFormSwitcherText: {
