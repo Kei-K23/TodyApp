@@ -5,7 +5,7 @@ import { databases } from "@/lib/appwrite";
 import { useAuth } from "@/lib/auth-context";
 import {
   APPWRITE_DATABASE_ID,
-  APPWRITE_TASK_DATABASE_ID,
+  APPWRITE_TASK_COLLECTION_ID,
 } from "@/lib/constants";
 import { commonStyles, FONT_SIZES } from "@/styles/styles";
 import { useRouter } from "expo-router";
@@ -35,7 +35,7 @@ const AddTaskScreen = () => {
       setIsLoading(true);
       await databases.createDocument(
         APPWRITE_DATABASE_ID!,
-        APPWRITE_TASK_DATABASE_ID!,
+        APPWRITE_TASK_COLLECTION_ID!,
         ID.unique(),
         {
           user_id: user.$id,

@@ -1,4 +1,4 @@
-import { COLORS, FONT_SIZES } from "@/styles/styles";
+import { COLORS } from "@/styles/styles";
 import { Task, TASK_IS_DONE_ENUM } from "@/types/database";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   text: {
-    fontSize: FONT_SIZES.medium,
+    fontSize: 17,
     fontWeight: "600",
     color: COLORS.black,
   },
