@@ -1,7 +1,12 @@
+import Button from "@/components/ui/button";
+import { useAuth } from "@/lib/auth-context";
+import { Link } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
 
-const Index = () => {
+const TasksScreen = () => {
+  const { user, signOut } = useAuth();
+
   return (
     <View
       style={{
@@ -18,8 +23,11 @@ const Index = () => {
         Hello World
       </Text>
       <Text>Hello React Native</Text>
+      <Text>{user?.name}</Text>
+      <Link href={"/landing"}>Auth</Link>
+      <Button title="logout" onPress={signOut} />
     </View>
   );
 };
 
-export default Index;
+export default TasksScreen;
