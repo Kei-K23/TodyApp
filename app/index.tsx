@@ -2,11 +2,14 @@ import Button from "@/components/ui/button";
 import Separator from "@/components/ui/separator";
 import { COLORS, commonStyles } from "@/styles/styles";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const LandingScreen = () => {
+  const router = useRouter();
+
   return (
     <SafeAreaView
       style={{
@@ -48,7 +51,13 @@ const LandingScreen = () => {
         Here&apos;s a mobile platform that helps you create task or to list so
         that it can help you in every job easier and faster.
       </Text>
-      <Button title="Continue with email" icon="mail" />
+      <Button
+        title="Continue with email"
+        icon="mail"
+        onPress={() => {
+          router.push("/auth");
+        }}
+      />
       <View style={styles.separatorContainer}>
         <Separator />
         <Text style={{ marginHorizontal: 10 }}>or continue with</Text>

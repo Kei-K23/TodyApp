@@ -23,7 +23,7 @@ const commonStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
-    padding: 16,
+    padding: 18,
   },
   card: {
     backgroundColor: COLORS.white,
