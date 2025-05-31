@@ -1,6 +1,7 @@
 import LoginForm from "@/components/auth/login-form";
 import RegisterForm from "@/components/auth/register-form";
 import Button from "@/components/ui/button";
+import { useToast } from "@/components/ui/toast-provider";
 import { useAuth } from "@/lib/auth-context";
 import { COLORS, commonStyles } from "@/styles/styles";
 import { useRouter } from "expo-router";
@@ -22,6 +23,7 @@ const AuthScreen = () => {
   const [password, setPassword] = useState("");
   const { isLoading, signIn, signUp } = useAuth();
   const router = useRouter();
+  const { showToast } = useToast();
 
   const handleClearInputs = () => {
     setEmail("");
@@ -36,8 +38,10 @@ const AuthScreen = () => {
 
     const errorMsg = await signIn({ email, password });
     if (errorMsg) {
+      showToast(errorMsg, "error");
       return;
     }
+    showToast("Logged in successfully", "success");
     router.replace("/(tabs)/tasks");
   };
 
@@ -48,8 +52,11 @@ const AuthScreen = () => {
 
     const errorMsg = await signUp({ email, password, username });
     if (errorMsg) {
+      showToast(errorMsg, "error");
       return;
     }
+
+    showToast("Registered in successfully", "success");
     router.replace("/(tabs)/tasks");
   };
 

@@ -1,3 +1,4 @@
+import { ToastProvider } from "@/components/ui/toast-provider";
 import { AuthProvider, useAuth } from "@/lib/auth-context";
 import { Stack, useRouter, useSegments } from "expo-router";
 import { useEffect } from "react";
@@ -29,32 +30,34 @@ export default function RootLayout() {
     <AuthProvider>
       <SafeAreaProvider>
         <RouteGuard>
-          <Stack>
-            <Stack.Screen
-              name="landing"
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="auth"
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="(tabs)"
-              options={{
-                headerShown: false,
-              }}
-            />
-            <Stack.Screen
-              name="add-task"
-              options={{
-                headerShown: false,
-              }}
-            />
-          </Stack>
+          <ToastProvider>
+            <Stack>
+              <Stack.Screen
+                name="landing"
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="auth"
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="(tabs)"
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="add-task"
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </Stack>
+          </ToastProvider>
         </RouteGuard>
       </SafeAreaProvider>
     </AuthProvider>

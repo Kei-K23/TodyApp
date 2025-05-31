@@ -1,5 +1,6 @@
 import Button from "@/components/ui/button";
 import IconButton from "@/components/ui/icon-button";
+import { useToast } from "@/components/ui/toast-provider";
 import { databases } from "@/lib/appwrite";
 import { useAuth } from "@/lib/auth-context";
 import {
@@ -25,6 +26,7 @@ const AddTaskScreen = () => {
   const { user } = useAuth();
   const [title, setTitle] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { showToast } = useToast();
 
   const handleTaskCreate = async () => {
     if (!title || !user) return;
@@ -41,9 +43,14 @@ const AddTaskScreen = () => {
         }
       );
 
+      showToast("Task added", "success");
       router.back();
     } catch (error) {
-      console.log(error);
+      if (error instanceof Error) {
+        showToast(error.message, "error");
+        return;
+      }
+      showToast("Error occurred", "error");
     } finally {
       setIsLoading(false);
     }
