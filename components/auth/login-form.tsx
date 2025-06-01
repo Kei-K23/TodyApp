@@ -21,7 +21,7 @@ const LoginForm = ({ setEmail, setPassword }: LoginFormProps) => {
           marginTop: 10,
         }}
       >
-        Your work faster and structured with Todyapp
+        Your work faster and structured with TodoApp
       </Text>
       <View
         style={{

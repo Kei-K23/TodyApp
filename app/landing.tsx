@@ -1,5 +1,4 @@
 import Button from "@/components/ui/button";
-import Separator from "@/components/ui/separator";
 import { COLORS, commonStyles } from "@/styles/styles";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
@@ -19,7 +18,7 @@ const LandingScreen = () => {
       }}
     >
       <Text style={{ ...commonStyles.headerText, textAlign: "center" }}>
-        Welcome to <Text style={{ color: COLORS.primary }}>TodyApp</Text>
+        Welcome to <Text style={{ color: COLORS.primary }}>TodoApp</Text>
       </Text>
       <Image
         source={require("../assets/images/landing_screen_img.svg")}
@@ -57,16 +56,6 @@ const LandingScreen = () => {
         onPress={() => {
           router.push("/auth");
         }}
-      />
-      <View style={styles.separatorContainer}>
-        <Separator />
-        <Text style={{ marginHorizontal: 10 }}>or continue with</Text>
-        <Separator />
-      </View>
-      <Button
-        title="Continue with Google"
-        icon="logo-google"
-        variant="outline"
       />
     </SafeAreaView>
   );

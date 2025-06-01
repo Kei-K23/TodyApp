@@ -106,7 +106,7 @@ const AuthScreen = () => {
               style={styles.authFormSwitcherText}
             >
               {authForm === "login"
-                ? "New to TodyApp? Register here!"
+                ? "New to TodoApp? Register here!"
                 : "Already have an account? Login here!"}
             </Text>
           </View>
