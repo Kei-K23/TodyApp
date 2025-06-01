@@ -1,12 +1,8 @@
+import { createTask } from "@/api/task";
 import Button from "@/components/ui/button";
 import IconButton from "@/components/ui/icon-button";
 import { useToast } from "@/components/ui/toast-provider";
-import { databases } from "@/lib/appwrite";
 import { useAuth } from "@/lib/auth-context";
-import {
-  APPWRITE_DATABASE_ID,
-  APPWRITE_TASK_COLLECTION_ID,
-} from "@/lib/constants";
 import { commonStyles, FONT_SIZES } from "@/styles/styles";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
@@ -18,7 +14,6 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { ID } from "react-native-appwrite";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const AddTaskScreen = () => {
@@ -33,17 +28,7 @@ const AddTaskScreen = () => {
 
     try {
       setIsLoading(true);
-      await databases.createDocument(
-        APPWRITE_DATABASE_ID!,
-        APPWRITE_TASK_COLLECTION_ID!,
-        ID.unique(),
-        {
-          user_id: user.$id,
-          title,
-          created_at: new Date().toISOString(),
-        }
-      );
-
+      await createTask({ title, userId: user.$id });
       showToast("Task added", "success");
       router.back();
     } catch (error) {
@@ -88,6 +73,7 @@ const AddTaskScreen = () => {
               />
             </View>
             <TextInput
+              autoFocus={true}
               placeholder="Write a new task..."
               multiline={true}
               style={styles.inputField}
