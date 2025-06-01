@@ -1,6 +1,7 @@
 import { COLORS } from "@/styles/styles";
 import { Task, TASK_IS_DONE_ENUM } from "@/types/database";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   StyleSheet,
@@ -17,10 +18,16 @@ interface TaskItemProps {
 }
 
 const TaskItem = ({ task, onToggleComplete, style }: TaskItemProps) => {
+  const router = useRouter();
   const isCompleted = task.is_done === TASK_IS_DONE_ENUM.DONE ? true : false;
 
   return (
-    <View style={[styles.container, style]}>
+    <TouchableOpacity
+      onPress={() => {
+        router.push(`/task-details/${task.$id}`);
+      }}
+      style={[styles.container, style]}
+    >
       <TouchableOpacity onPress={() => onToggleComplete?.(task)}>
         <Ionicons
           name={isCompleted ? "checkmark-circle" : "ellipse-outline"}
@@ -38,7 +45,7 @@ const TaskItem = ({ task, onToggleComplete, style }: TaskItemProps) => {
           {task.title}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

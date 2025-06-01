@@ -56,6 +56,12 @@ export default function RootLayout() {
                   headerShown: false,
                 }}
               />
+              <Stack.Screen
+                name="task-details/[id]"
+                options={{
+                  headerShown: false,
+                }}
+              />
             </Stack>
           </ToastProvider>
         </RouteGuard>
