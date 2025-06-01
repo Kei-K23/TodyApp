@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# 📝 React Native Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple and intuitive Todo application built using **React Native**. This app allows users to efficiently manage daily tasks with a clean user interface and smooth performance across both Android and iOS devices.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Features
 
-   ```bash
-   npm install
-   ```
+- ✅ Add, edit, and delete tasks
+- 🕓 Mark tasks as complete or incomplete
+- 🎨 Clean and minimal UI with responsive design
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Screenshots
 
-In the output, you'll find options to open the app in a
+### Landing Screen
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+![landing](/public/img1.png)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Login Screen
 
-## Get a fresh project
+![login](/public/img2.png)
 
-When you're ready, run:
+### Register Screen
 
-```bash
-npm run reset-project
-```
+![register](/public/img3.png)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Tasks Screen
 
-## Learn more
+![tasks](/public/img4.png)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Add new Task Screen
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+![add-task](/public/img5.png)
 
-## Join the community
+### Edit Task Screen
 
-Join our community of developers creating universal apps.
+![edit-task](/public/img6.png)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Profile Screen
+
+![profile](/public/img7.png)
+
+---
+
+## 🙌 Contributing
+
+Contributions are what make the open source community such an amazing place to learn and grow. Feel free to fork the project and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
+
+Made with ❤️ by [Arkar Min](https://github.com/Kei-K23)
